@@ -1,0 +1,163 @@
+<!-- https://github.com/divanov11/json-html-table/blob/master/jsontable.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <title>HTML Table Generator</title>  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<style>
+		table {
+			border:1.5px solid #000000;
+			border-collapse:collapse;
+			padding:5px;
+        }
+        table.center {
+        margin-left: auto; 
+        margin-right: auto;
+        }
+
+        table th {
+            border:1px solid  #000000;
+            padding:10px;
+            background:  hsl(0, 0%, 90%);    
+            color: rgb(185, 136, 0);
+        }
+        table td {
+            border:1px solid #000000;
+            text-align:right;
+            padding:5px;
+            background: #ffffff;
+            color: #313030;
+            border-collapse: collapse;
+        }
+        table td.a1 {
+            border:1px solid #000000;
+            padding:5px;
+            background: #ffffff;
+            font-weight: bold;
+            color: #383636;
+        }
+        table td.logo {
+            /* border:1px solid #080075; */
+            text-align:left;
+            padding:5px;
+            background: #ffffff;
+            /* color: #b16f6f; */
+            border-collapse: collapse;
+            white-space: nowrap;
+        }
+        table td.header {
+            border:0px solid;
+            text-align:center;
+            font-weight: bold;
+            background: #ffffff;
+        }
+        table td.multicolortext {
+        /* background-image: linear-gradient(to left,rgb(65, 23, 23), rgb(97, 63, 13), rgb(150, 103, 16), rgb(0, 0, 0), rgb(172, 122, 30), rgb(2, 2, 1)); */
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent ;
+        color: rgb(185, 136, 0);
+        border:0px solid;
+        font-weight: bold;
+        text-align:center;
+        }
+        table th.multicolortext {
+        background-image: linear-gradient(to left,rgb(65, 23, 23), rgb(97, 63, 13), rgb(150, 103, 16), rgb(0, 0, 0), rgb(172, 122, 30), rgb(2, 2, 1));
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        /* color: transparent; */
+        border:1px solid #000000;
+        font-weight: bold;
+        text-align:center;
+        
+        }
+	</style>
+</head>     
+
+<body>
+
+    <p></p>
+    <table class="center">
+    <thead>
+        <br><br><br>
+        <tr>
+            <td colspan ='1' class="header"  ><img src="https://media.istockphoto.com/id/1325438825/vector/premium-letter-sr-logo-design-rs-letter-logo-design-with-modern-trendy.jpg?s=612x612&w=0&k=20&c=1rgBoofcl29vFKoU0jZsakUKDjPFA3bxlIjxyfoNv2E=" alt="" border='5' height='70' width='150' />  </td>
+            <td colspan ='10' class="multicolortext" style="font-size:18px" > SR Tours and Travels 
+                <br> Hasthinapuram Central Sagar Road
+                <br>  Hyderabad 500079
+            </td>
+
+            <td colspan ='14' class="header" style="text-align:right;font-size:10px;font-weight: bold;" > <br><br><br>Mobile: 8367335787
+                <br> 8367775787
+                <br> Email: salamalarajesh@gmail.com
+            </td>
+
+        </tr>
+            <tr>
+                <th class="multicolortext">Date</th>
+                <th class="multicolortext">Vehicle Number</th>
+                <th class="multicolortext">Driver Name</th>
+                <th class="multicolortext">Arear Reference</th>
+                <th class="multicolortext">Starting Reading</th>
+                <th class="multicolortext">Closing Reading</th>
+                <th class="multicolortext">Starting Time</th>
+                <th class="multicolortext">Closing Time</th>
+                <th class="multicolortext">Extra Kms</th>
+                <th class="multicolortext">Extra Hrs</th>
+                <th class="multicolortext">Toll Amount</th>
+                <th class="multicolortext">Driver allowance</th>
+                <th class="multicolortext">Advance</th>
+                <th class="multicolortext"> Total   </th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+        </tbody>
+
+                <tr>
+                    <td class="a1" colspan="13" style="border:1.5px solid #070707" >Balance</td>
+                    <td>&nbsp;{{total_balance_Amount}}</td>
+                </tr>
+
+
+        <script>
+
+            buildTable({{myArray}})
+        
+        
+        
+            function buildTable(data){
+                var table = document.getElementById('myTable')
+        
+                for (var i = 0; i < data.length; i++){
+                    var row = `<tr>
+                                    <td>${data[i].Booking_Date}</td>
+                                    <td>${data[i].Vehicle_Number}</td>
+                                    <td>${data[i].Driver_Name}</td>
+                                    <td>${data[i].Area_Reference}</td>
+                                    <td>${data[i].Start_Reading}</td>
+                                    <td>${data[i].End_Reading}</td>
+                                    <td>${data[i].Start_Time}</td>
+                                    <td>${data[i].End_Time}</td>
+                                    <td>${data[i].Extra_KMS}</td>
+                                    <td>${data[i].Extra_time}</td>
+                                    <td>${data[i].Tolls_Amount}</td>
+                                    <td>${data[i].Driver_Allowance}</td>
+                                    <td>${data[i].Advance}</td>
+                                    <td>${data[i].Balance_Bill_Amount}</td>
+                                </tr>`
+                    table.innerHTML += row
+        
+        
+                }
+            }
+
+        
+        </script>
+
+    </table>
+
+    

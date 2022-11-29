@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <title>HTML Table Generator</title>  -->
+	<style>
+		table {
+			border:1.5px solid #000000;
+			border-collapse:collapse;
+			padding:5px;
+        }
+        table.center {
+        margin-left: auto; 
+        margin-right: auto;
+        }
+
+        table th {
+            border:1px solid  #000000;
+            padding:10px;
+            background:  hsl(0, 0%, 90%);    
+            color: rgb(185, 136, 0);
+        }
+        table td {
+            border:1px solid #000000;
+            text-align:right;
+            padding:5px;
+            background: #ffffff;
+            color: #313030;
+            border-collapse: collapse;
+        }
+        table td.a1 {
+            border:1px solid #000000;
+            padding:5px;
+            background: #ffffff;
+            font-weight: bold;
+            color: #383636;
+        }
+        table td.logo {
+            /* border:1px solid #080075; */
+            text-align:left;
+            padding:5px;
+            background: #ffffff;
+            /* color: #b16f6f; */
+            border-collapse: collapse;
+            white-space: nowrap;
+        }
+        table td.header {
+            border:0px solid;
+            text-align:center;
+            font-weight: bold;
+            background: #ffffff;
+        }
+        table td.multicolortext {
+        /* background-image: linear-gradient(to left,rgb(65, 23, 23), rgb(97, 63, 13), rgb(150, 103, 16), rgb(0, 0, 0), rgb(172, 122, 30), rgb(2, 2, 1)); */
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent ;
+        color: rgb(185, 136, 0);
+        border:0px solid;
+        font-weight: bold;
+        text-align:center;
+        }
+        table th.multicolortext {
+        background-image: linear-gradient(to left,rgb(65, 23, 23), rgb(97, 63, 13), rgb(150, 103, 16), rgb(0, 0, 0), rgb(172, 122, 30), rgb(2, 2, 1));
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        /* color: transparent; */
+        border:1px solid #000000;
+        font-weight: bold;
+        text-align:center;
+        
+        }
+	</style>
+</head>     
+
+<body>
+
+    <p></p>
+    <table class="center">
+    <thead>
+
+        <tr>
+            <td colspan ='1' class="header"  ><img src="https://media.istockphoto.com/id/1325438825/vector/premium-letter-sr-logo-design-rs-letter-logo-design-with-modern-trendy.jpg?s=612x612&w=0&k=20&c=1rgBoofcl29vFKoU0jZsakUKDjPFA3bxlIjxyfoNv2E=" alt="" border='5' height='70' width='100' />  </td>
+            <td colspan ='3' class="multicolortext" style="font-size:18px" > SR Tours and Travels 
+                <br> Hasthinapuram Central Sagar Road
+                <br>  Hyderabad 500079
+                
+            </td>
+            </td>
+            <td colspan ='3' class="header" style="text-align:right;font-size:10px;font-weight: bold;" > <br><br><br>Mobile: 8367335787
+                <br> 8367775787
+                <br> Email: salamalarajesh@gmail.com
+            </td>
+        </tr>
+
+
+        
+            <tr>
+                <th class="multicolortext">Date</th>
+                <th class="multicolortext">Vehicle Number</th>
+                <th class="multicolortext">Driver Name</th>
+                <th class="multicolortext">Arear Reference</th>
+                <th class="multicolortext">Base Price</th>
+                <th class="multicolortext"> Total   </th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr>
+                    <td >&nbsp;{{Booking_Date}}</td>
+                    <td>&nbsp;{{Vehicle_Number}}</td>
+                    <td>&nbsp;{{Driver_Name}}</td>
+                    <td>&nbsp;{{Area_Reference}}</td>
+                    <td class="a1">Package Price</td>
+                    <td>{{Local_base_price}}</td>
+                </tr>
+                <tr>
+                    <td class="a1">Starting&nbsp; Reading&nbsp;</td>
+                    <td>&nbsp; {{Start_Reading}}</td>
+                    <td class="a1">Total Kms'</td>
+                    <td>&nbsp;{{Total_Kms}}</td>
+                    <td class="a1">&nbsp;</td>
+                    <td class="a1">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="a1">Closing Reading</td>
+                    <td>&nbsp;{{End_Reading}}</td>
+                    <td class="a1">Total Hrs'</td>
+                    <td>&nbsp;{{Total_Time}}</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="a1">Starting&nbsp; Time</td>
+                    <td>&nbsp;{{Start_Time}}</td>
+                    <td class="a1">Extra Kms'</td>
+                    <td>&nbsp;{{Extra_KMS}}</td>
+                    <td>&nbsp;{{Km_price}}</td>
+                    <td>&nbsp;{{Extra_km_amount}}</td>
+                </tr>
+                <tr>
+                    <td class="a1">Closing Time</td>
+                    <td>&nbsp;{{End_Time}}</td>
+                    <td class="a1">Extra Hrs'</td>
+                    <td>&nbsp;{{Extra_time}}</td>
+                    <td>&nbsp;{{Extra_hr_price}}</td>
+                    <td>&nbsp;{{Extra_hr_amount}}</td>
+                </tr>
+                <tr>
+                    <td class="a1" colspan="5">Toll Amount</td>
+                    <td>&nbsp;{{Tolls_Amount}}</td>
+                    </tr>
+                <tr>
+                    <td class="a1" colspan="5">Driver allowance</td>
+                    <td>&nbsp;{{Driver_Allowance}}</td>
+                </tr>
+
+                <tr>
+                    <td class="a1" colspan="5">Advance</td>
+                    <td>&nbsp;{{Advance}}</td>
+                </tr>
+
+                <tr>
+                    <td class="a1" colspan="5" style="border:1.5px solid #070707" >Balance</td>
+                    <td>&nbsp;{{Balance_Bill_Amount}}</td>
+                </tr>
+
+            </tbody>
+    </table>
+
+    
